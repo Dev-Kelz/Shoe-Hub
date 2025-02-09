@@ -16,6 +16,10 @@ def home():
 def about():
     return render_template("about.html", user=current_user)
 
+@views.route('/profile')
+def profile():
+    return render_template('profile.html', user=current_user)
+
 
 @views.route('/contact', methods=['GET', 'POST'])
 def contact():

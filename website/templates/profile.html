@@ -1,0 +1,89 @@
+{% extends "base.html" %} {% block title %}Profile{% endblock %} {% block
+content %}
+<div class="container mt-4">
+  <div class="row">
+    <div class="col-md-4">
+      <!-- Profile Sidebar -->
+      <div class="card">
+        <div class="card-header bg-primary text-white">
+          <h5 class="card-title mb-0">{{ user.username }}</h5>
+        </div>
+        <div class="card-body">
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+              <a href="#" class="text-decoration-none">Profile</a>
+            </li>
+            <li class="list-group-item">
+              <a href="#" class="text-decoration-none">Orders</a>
+            </li>
+            <li class="list-group-item">
+              <a href="#" class="text-decoration-none">Settings</a>
+            </li>
+            <li class="list-group-item">
+              <a
+                href="{{ url_for('auth.logout') }}"
+                class="text-decoration-none"
+                >Logout</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-8">
+      <!-- Profile Content -->
+      <div class="card">
+        <div class="card-header bg-primary text-white">
+          <h5 class="card-title mb-0">Profile Information</h5>
+        </div>
+        <div class="card-body">
+          <form>
+            <div class="mb-3">
+              <label for="first_name" class="form-label">First Name</label>
+              <input
+                type="text"
+                class="form-control"
+                id="first_name"
+                value="{{ user.first_name }}"
+                readonly
+              />
+            </div>
+            <div class="mb-3">
+              <label for="last_name" class="form-label">Last Name</label>
+              <input
+                type="text"
+                class="form-control"
+                id="last_name"
+                value="{{ user.last_name }}"
+                readonly
+              />
+            </div>
+            <div class="mb-3">
+              <label for="username" class="form-label">Username</label>
+              <input
+                type="text"
+                class="form-control"
+                id="username"
+                value="{{ user.username }}"
+                readonly
+              />
+            </div>
+            <div class="mb-3">
+              <label for="email" class="form-label">Email</label>
+              <input
+                type="email"
+                class="form-control"
+                id="email"
+                value="{{ user.email }}"
+                readonly
+              />
+            </div>
+            <!-- Add more profile fields as needed -->
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}
