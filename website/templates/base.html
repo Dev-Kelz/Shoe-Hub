@@ -29,15 +29,16 @@
       <div class="container-fluid">
         <div class="ms-2">
           <button
-            class="navbar-toggler"
+            class="btn d-lg-none"
             type="button"
             data-bs-toggle="offcanvas"
-            data-bs-target="#staticBackdrop"
-            aria-controls="staticBackdrop"
+            data-bs-target="#offcanvasMenu"
+            aria-controls="offcanvasMenu"
           >
-            <span class="navbar-toggler-icon"></span>
+            <i class="fas fa-bars"></i>
           </button>
-          <a class="navbar-brand" href="{{ url_for('views.home') }}"
+
+          <a class="navbar-brand fw-bold" href="{{ url_for('views.home') }}"
             >Shoe.com</a
           >
         </div>
@@ -66,7 +67,7 @@
             </li>
           </ul>
         </div>
-        <div class="position-absolute top-0 end-0 p-3 ms-2">
+        <div class="d-flex align-items-center gap-3">
           {% if user.is_authenticated %}
           <a href="{{ url_for('views.home') }}" class="text-decoration-none">
             <i class="fas fa-search text-decoration-none"></i>
@@ -116,58 +117,119 @@
     <!-- Right Offcanvas Sidebar -->
     <div
       class="offcanvas offcanvas-start"
-      data-bs-backdrop="static"
       tabindex="-1"
-      id="staticBackdrop"
-      aria-labelledby="staticBackdropLabel"
+      id="offcanvasMenu"
+      aria-labelledby="offcanvasMenuLabel"
     >
       <div class="offcanvas-header">
-        <h5 class="offcanvas-title">Shoe.com</h5>
+        <h5 class="offcanvas-title fw-bold" id="offcanvasMenuLabel">
+          Shoe.com
+        </h5>
         <button
           type="button"
-          class="btn-close"
+          class="btn-close text-reset"
           data-bs-dismiss="offcanvas"
+          aria-label="Close"
         ></button>
       </div>
       <div class="offcanvas-body">
-        <ul class="list-unstyled">
-          <li><a href="#" class="text-decoration-none">Product</a></li>
-          <li><a href="#" class="text-decoration-none">Featured</a></li>
-          <li><a href="#" class="text-decoration-none">Reviews</a></li>
+        <!-- Main Links -->
+        <ul class="list-unstyled mb-4">
           <li>
-            <a href="{{ url_for('views.about') }}" class="text-decoration-none"
-              >About us</a
+            <a href="#" class="text-decoration-none text-primary d-block mb-2"
+              >Product</a
             >
           </li>
           <li>
-            <a
-              href="{{ url_for('views.contact') }}"
-              class="text-decoration-none"
-              >Contant Us</a
+            <a href="#" class="text-decoration-none text-primary d-block mb-2"
+              >Featured</a
             >
           </li>
-        </ul>
-        <h6 class="mt-3">MY ACCOUNT</h6>
-        <ul class="list-unstyled">
-          <li><a href="#" class="text-decoration-none">Orders</a></li>
-          <li><a href="#" class="text-decoration-none">Inbox</a></li>
-          <li><a href="#" class="text-decoration-none">Pending Reviews</a></li>
-          <li><a href="#" class="text-decoration-none">Voucher</a></li>
-          <li><a href="#" class="text-decoration-none">Wishlist</a></li>
+          <li>
+            <a href="#" class="text-decoration-none text-primary d-block mb-2"
+              >Reviews</a
+            >
+          </li>
+          <li>
+            <a href="#" class="text-decoration-none text-primary d-block mb-2"
+              >About Us</a
+            >
+          </li>
+          <li>
+            <a href="#" class="text-decoration-none text-primary d-block mb-2"
+              >Contact Us</a
+            >
+          </li>
         </ul>
 
-        <h6 class="mt-3">OUR CATEGORIES</h6>
+        <!-- My Account Section -->
+        <h6 class="fw-bold text-uppercase text-secondary mb-2">My Account</h6>
+        <ul class="list-unstyled mb-4">
+          <li>
+            <a href="#" class="text-decoration-none text-primary d-block mb-2"
+              >Orders</a
+            >
+          </li>
+          <li>
+            <a href="#" class="text-decoration-none text-primary d-block mb-2"
+              >Inbox</a
+            >
+          </li>
+          <li>
+            <a href="#" class="text-decoration-none text-primary d-block mb-2"
+              >Pending Reviews</a
+            >
+          </li>
+          <li>
+            <a href="#" class="text-decoration-none text-primary d-block mb-2"
+              >Voucher</a
+            >
+          </li>
+          <li>
+            <a href="#" class="text-decoration-none text-primary d-block mb-2"
+              >Wishlist</a
+            >
+          </li>
+        </ul>
+
+        <!-- Our Categories Section -->
+        <h6 class="fw-bold text-uppercase text-secondary mb-2">
+          Our Categories
+        </h6>
         <ul class="list-unstyled">
-          <li><a href="#" class="text-decoration-none">Phone & Tablets</a></li>
-          <li><a href="#" class="text-decoration-none">Appliances</a></li>
-          <li><a href="#" class="text-decoration-none">Electronics</a></li>
-          <li><a href="#" class="text-decoration-none">Supermarket</a></li>
-          <li><a href="#" class="text-decoration-none">Health & Beauty</a></li>
-          <li><a href="#" class="text-decoration-none">Home & Office</a></li>
+          <li>
+            <a href="#" class="text-decoration-none text-primary d-block mb-2"
+              >Phone & Tablets</a
+            >
+          </li>
+          <li>
+            <a href="#" class="text-decoration-none text-primary d-block mb-2"
+              >Appliances</a
+            >
+          </li>
+          <li>
+            <a href="#" class="text-decoration-none text-primary d-block mb-2"
+              >Electronics</a
+            >
+          </li>
+          <li>
+            <a href="#" class="text-decoration-none text-primary d-block mb-2"
+              >Supermarket</a
+            >
+          </li>
+          <li>
+            <a href="#" class="text-decoration-none text-primary d-block mb-2"
+              >Health & Beauty</a
+            >
+          </li>
+          <li>
+            <a href="#" class="text-decoration-none text-primary d-block mb-2"
+              >Home & Office</a
+            >
+          </li>
         </ul>
       </div>
     </div>
-
     <footer class="bg-white text-dark py-4 mt-5">
       <div class="container">
         <div class="row">
